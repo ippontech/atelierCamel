@@ -38,7 +38,6 @@ public class Notifier implements CommitListener {
 			MessageProducer producer = session.createProducer(queue);
 			
 			Message message = session.createObjectMessage(commit);
-//			Message message = session.createTextMessage(commit.getName());
 			
 			producer.send(message);
 		} finally {
