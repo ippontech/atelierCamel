@@ -31,7 +31,7 @@ public class ConnectionTest {
 			
 			MessageProducer producer = session.createProducer(queue);
 			
-			Iterable<RevCommit> commits = new Git(Main.getRepository("/home/jcdelmas/dev/test-git-repo/.git")).log().call();
+			Iterable<RevCommit> commits = new Git(Main.getSampleRepo()).log().call();
 			
 			Message message = session.createObjectMessage(commits.iterator().next());
 			producer.send(message);

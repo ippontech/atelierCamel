@@ -43,6 +43,7 @@ public class RouteConfig extends RouteBuilder {
 					return false;
 				}
         	})
+        	// TODO : utiliser un bean
         	.process(new Processor() {
 				public void process(Exchange exchange) throws Exception {
 					RevCommit commit = (RevCommit) exchange.getIn().getBody();
@@ -53,7 +54,8 @@ public class RouteConfig extends RouteBuilder {
 					System.out.println();
 					System.out.println(commit.getFullMessage());
 				}
-        	})	
+        	})
+        	// TODO : utiliser un bean
         	.process(new Processor() {
 				public void process(Exchange exchange) throws Exception {
 					Message message = exchange.getIn();
