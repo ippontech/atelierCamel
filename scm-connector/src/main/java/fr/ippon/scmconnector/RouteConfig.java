@@ -7,13 +7,9 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.http.HttpOperationFailedException;
 import org.apache.camel.model.dataformat.JsonLibrary;
 import org.eclipse.jgit.revwalk.RevCommit;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class RouteConfig extends RouteBuilder {
 	
-	private static final Logger log = LoggerFactory.getLogger(RouteConfig.class);
-
 	@Override
 	public void configure() throws Exception {
 		
