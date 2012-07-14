@@ -13,7 +13,9 @@ public class Main {
 	private static final String SAMPLE_REPO_PATH = "../sampleGitRepo/.git";
 
 	public static void main(String[] args) throws Exception {
-		Repository repository = getSampleRepo();
+		Repository repository = args.length > 0
+				? getRepository(args[0])
+				: getSampleRepo();
 		new Poller(repository, new Notifier()).run();
 	}
 
